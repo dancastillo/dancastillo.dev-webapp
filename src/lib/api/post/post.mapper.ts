@@ -1,3 +1,5 @@
+import { ErrorResponse } from '../common/error'
+
 /**
  * Expected Post Data from API
  */
@@ -7,6 +9,11 @@ export type PostData = {
   date: string
   content: string
   tags: string[]
+}
+
+export type PostResponse = {
+  data: PostData[]
+  errors: ErrorResponse[]
 }
 
 /**

@@ -4,7 +4,7 @@ import { randomUUID } from 'node:crypto'
 import React from 'react'
 
 const BlogPost = ({ post }: { post: Post }) => {
-  const { id, title, date, content, tags } = post
+  const { id, title, date, tags } = post
   return (
     <li key={`card-li-${id}`} className="card group">
       <div className="flex-between">
