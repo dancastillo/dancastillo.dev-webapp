@@ -1,5 +1,7 @@
 import { getContributions } from '@/lib/api/contribution/contribution'
 import { Contribution } from '@/lib/api/contribution/contribution.mapper'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default async function Contributions() {
   const contributions: Contribution[] = await getContributions()
@@ -59,7 +61,17 @@ export default async function Contributions() {
           Github profile
         </a>
       </div>
-      );
+      <section className="text-white flex items-center space-x-4 mb-5">
+        Like my work? Why not buy me a coffee?
+        <Link href="https://buymeacoffee.com/dancastillo" className="m-3" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
+            alt="Buy Me A Coffee"
+            width={150}
+            height={100}
+          />
+        </Link>
+      </section>
     </>
   )
 }

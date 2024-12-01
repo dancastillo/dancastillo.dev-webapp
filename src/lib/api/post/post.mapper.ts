@@ -1,3 +1,5 @@
+import { Nullable } from '@/lib/common/types'
+import { formatDate } from '../common/date'
 import { ErrorResponse } from '../common/error'
 
 /**
@@ -6,9 +8,7 @@ import { ErrorResponse } from '../common/error'
 export type PostData = {
   id: string
   title: string
-  date: string
-  content: string
-  tags: string[]
+  updatedAt: string
 }
 
 export type PostResponse = {
@@ -16,23 +16,51 @@ export type PostResponse = {
   errors: ErrorResponse[]
 }
 
+export type PostByIdData = {
+  id: string
+  title: string
+  content: string
+  updatedAt: string
+}
+
+export type PostByIdResponse = {
+  data: Nullable<PostByIdData>
+  errors: ErrorResponse[]
+}
 /**
  * Post type to be used in the app
  */
+
 export type Post = {
   id: string
   title: string
-  date: string
-  content: string
-  tags: string[]
+  updatedAt: string
 }
 
 export function mapPost(post: PostData): Post {
   return {
     id: post.id,
     title: post.title,
-    date: post.date,
+    updatedAt: formatDate(post.updatedAt),
+  }
+}
+
+export type PostById = {
+  id: string
+  title: string
+  content: string
+  updatedAt: string
+}
+
+export function mapPostById(post: Nullable<PostByIdData>): Nullable<PostById> {
+  if (!post) {
+    return null
+  }
+
+  return {
+    id: post.id,
+    title: post.title,
     content: post.content,
-    tags: post.tags,
+    updatedAt: formatDate(post.updatedAt),
   }
 }
