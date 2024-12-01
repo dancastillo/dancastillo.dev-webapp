@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: 'avatars.githubusercontent.com',
         pathname: '/u/15673208',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.buymeacoffee.com',
+        pathname: '/assets/img/custom_images/orange_img.png',
+      },
     ],
   },
 }

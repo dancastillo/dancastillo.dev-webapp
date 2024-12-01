@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar";
+import Navbar from '@/components/navbar'
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -6,5 +6,5 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
       <Navbar />
       {children}
     </main>
-  );
+  )
 }

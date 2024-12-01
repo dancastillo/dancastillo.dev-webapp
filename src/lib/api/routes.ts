@@ -1,5 +1,6 @@
 export const ROUTES = {
   HOME: '/',
-  POSTS: '/posts',
+  POSTS: '/api/posts',
+  POST_BY_ID: '/api/posts',
   CONTRIBUTIONS: '/github-contributions',
 } as const

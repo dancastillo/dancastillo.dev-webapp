@@ -1,10 +1,9 @@
-import Contact from "@/components/contact";
+import Contact from '@/components/contact'
 
 export default function Home() {
-
   return (
     <>
       <Contact />
     </>
-  );
+  )
 }
